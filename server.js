@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const primes = require('./primes.js');
 const fs = require('fs');
+const sqroot = require('../sqroot.js');
 
 app.get('/', function(req, res){
 	fs.readFile('index.html', function(err, data) {
