@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bynet-app
+  labels:
+    app: bynet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bynet
+  template:
+    metadata:
+      labels:
+        app: bynet
+    spec:
+      containers:
+        - image: moonlight234/bynet:latest
+          name: bynet
+          resources:
+            requests:
+              # memory: "64Mi"
+              cpu: "10m"
+            limits:
+              # memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - name: project-port
+              protocol: TCP
+              containerPort: 3000
