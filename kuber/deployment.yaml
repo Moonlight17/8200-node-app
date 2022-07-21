@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bynet-app
+  name: bynet-hackaton-app
   labels:
-    app: bynet
+    app: bynet-hackaton
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: bynet
+      app: bynet-hackaton
   template:
     metadata:
       labels:
-        app: bynet
+        app: bynet-hackaton
     spec:
       containers:
-        - image: moonlight234/bynet:latest
-          name: bynet
+        - image: moonlight234/bynet:8
+          name: bynet-hackaton
           resources:
             requests:
               # memory: "64Mi"
